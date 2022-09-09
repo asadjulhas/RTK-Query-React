@@ -33,8 +33,8 @@ export default function Videos() {
     return (
         <>
             {videos && videos.map(video => <Video key={video.id} video={video} />)}
-            {skip && <button onClick={()=>setSkip(false)}>Load Data</button>}
-            {<button onClick={()=>refetch()}>Reload Data</button>}
+            {/* {skip && <button onClick={()=>setSkip(false)}>Load Data</button>}
+            {<button onClick={()=>refetch()}>Reload Data</button>} */}
         </>
     );
 }

@@ -11,7 +11,7 @@ import RelatedVideos from "../video/related/RelatedVideos";
 export default function Video() {
   const {videoId} = useParams();
   const {data: video, isLoading, isError} = useGetVideoQuery(videoId, {
-    refetchOnMountOrArgChange: false.valueOf
+    refetchOnMountOrArgChange: false,
   });
 
   if(isError) {

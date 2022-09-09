@@ -1,9 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import deleteImage from "../../assets/delete.svg";
 import editImage from "../../assets/edit.svg";
+import { useDeleteVideoMutation } from "../../features/api/apiSlice";
 
 export default function Description({video}) {
   const {id, title, date, description} = video;
+  const [deleteVideo, {isLoading, isError, isSuccess}] = useDeleteVideoMutation();
+  const nagivate = useNavigate();
+  if(isSuccess) {
+    nagivate('/')
+  }
     return (
         <div>
             <h1 className="text-lg font-semibold tracking-tight text-slate-800">
@@ -31,7 +37,7 @@ export default function Description({video}) {
                             </span>
                         </Link>
                     </div>
-                    <div className="flex gap-1">
+                    <div onClick={()=>deleteVideo(id)} className="flex gap-1">
                         <div className="shrink-0">
                             <img
                                 className="w-5 block"

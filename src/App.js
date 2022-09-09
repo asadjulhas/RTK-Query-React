@@ -5,6 +5,7 @@ import Add from "./components/pages/Add";
 import Edit from "./components/pages/Edit";
 import Home from "./components/pages/Home";
 import Video from "./components/pages/Video";
+import './App.css';
 
 function App() {
     return (
